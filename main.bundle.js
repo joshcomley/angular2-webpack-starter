@@ -697,7 +697,7 @@ exports = module.exports = __webpack_require__(6)();
 
 
 // module
-exports.push([module.i, "/* this file will be extracted to main dist folder and is imported in index.html */\n/* This file is for setting global styles  */\nnav {\n  margin-top: 16px; }\n\nnav a {\n  background-color: #00838F;\n  color: white;\n  padding: 8px 16px;\n  margin: 8px;\n  vertical-align: middle;\n  line-height: 1.25;\n  text-align: center;\n  text-decoration: none;\n  border-radius: 4px; }\n", ""]);
+exports.push([module.i, "html, body {\n  height: 100%;\n  font-family: Arial, Helvetica, sans-serif; }\n\na.active {\n  background-color: gray; }\n", ""]);
 
 // exports
 
@@ -712,7 +712,7 @@ exports = module.exports = __webpack_require__(6)();
 
 
 // module
-exports.push([module.i, "html, body{\r\n  height: 100%;\r\n  font-family: Arial, Helvetica, sans-serif\r\n}\r\n\r\na.active {\r\n  background-color: gray;\r\n}\r\n", ""]);
+exports.push([module.i, "/* this file will be extracted to main dist folder and is imported in index.html */\n/* This file is for setting global styles  */\nnav {\n  margin-top: 16px; }\n\nnav a {\n  background-color: #00838F;\n  color: white;\n  padding: 8px 16px;\n  margin: 8px;\n  vertical-align: middle;\n  line-height: 1.25;\n  text-align: center;\n  text-decoration: none;\n  border-radius: 4px; }\n", ""]);
 
 // exports
 
@@ -762,7 +762,7 @@ module.exports = "<div>\r\n  <h1 x-large class=\"sample-content\">Your Content H
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(61);
+var content = __webpack_require__(62);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(16)(content, {});
@@ -814,7 +814,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(62);
+        var result = __webpack_require__(61);
 
         if (typeof result === "string") {
             module.exports = result;
