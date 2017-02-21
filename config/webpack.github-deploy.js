@@ -6,6 +6,7 @@ const path = require('path');
 const helpers = require('./helpers');
 const ghDeploy = require('./github-deploy');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 /**
  * Webpack Constants
@@ -40,6 +41,15 @@ module.exports = function (options) {
    },
 
    plugins: [
+     // Copy the index.html to 404.html so that 404 requests get redirected
+     // to Angular2. This ensures support for HTML5 URLs in GitHub pages.
+     new WebpackShellPlugin({
+       onBuildEnd: [
+         'copy ' +
+         helpers.root('dist') + '\\index.html ' +
+         helpers.root('dist') + '\\404.html'
+       ]
+     }),
      function() {
        this.plugin('done', function(stats) {
          console.log('Starting deployment to GitHub.');
