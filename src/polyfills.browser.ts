@@ -3,6 +3,8 @@
 // Polyfills
 
 // import 'ie-shim'; // Internet Explorer 9 support
+import 'angular2-ie9-shims/shims_for_IE.prod.js';
+import 'core-js/client/shim';
 
 // import 'core-js/es6';
 // Added parts of es6 which are necessary for your project or your browser support requirements.
