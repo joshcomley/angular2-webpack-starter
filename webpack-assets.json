@@ -1,0 +1,11 @@
+{
+  "main": {
+    "js": "/angular2-webpack-starter/main.bundle.js"
+  },
+  "vendor": {
+    "js": "/angular2-webpack-starter/vendor.bundle.js"
+  },
+  "polyfills": {
+    "js": "/angular2-webpack-starter/polyfills.bundle.js"
+  }
+}
