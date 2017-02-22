@@ -6,30 +6,64 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
+    var baseUrl = "";
+    var url = "";
+    var a = null;
+    var basePath = "/angular2-webpack-starter/";
+    var domain = window.location.protocol +
+      "//" +
+      window.location.host;
+    var trimStart = function (str, char) {
+      while (str.indexOf(char) === 0) {
+        str = str.substr(char.length);
+      }
+      return str;
+    }
+    var trimEnd = function (str, char) {
+      while (str.lastIndexOf(char) === str.length - 1) {
+        str = str.substring(0, str.length - char.length);
+      }
+      return str;
+    }
     var redirect = function (join) {
-      var path = join === "#" ? window.location.pathname : window.location.hash;
-      while (path.indexOf("#") === 0) {
-        path = path.substr(1);
-      }
-      while (path.indexOf("/") === 0) {
-        path = path.substr(1);
-      }
-      var url =
-        window.location.protocol +
-        '//' +
-        window.location.host +
+      var path = join === "#" ? a.pathname : a.hash;
+      path = trimStart(path, "#");
+      path = trimStart(path, "/");
+      basePath = trimStart(basePath, "/");
+      var newUrl =
+        trimEnd(baseUrl, "/") +
         "/" +
         join +
-        (join === "#" ? "/" : "") + 
+        (join === "#" ? "/" : "") +
         path +
-        window.location.search;
-      window.location.replace(url);
+        a.search;
+      window.location.replace(newUrl);
     }
-    if (window.location.hash && Boolean(history.pushState) === true) {
+    basePath = trimStart(basePath, "/");
+    if (basePath) {
+      var normalisedPath = window.location.pathname.substr(basePath.length);
+      normalisedPath = trimStart(normalisedPath, "/");
+      baseUrl =
+        domain +
+        "/" +
+        basePath;
+      url =
+        domain +
+        "/" +
+        normalisedPath +
+        window.location.search +
+        window.location.hash;
+    } else {
+      baseUrl = domain;
+      url = window.location.href;
+    }
+    a = document.createElement("a");
+    a.href = url;
+    if (a.hash && Boolean(history.pushState) === true) {
       redirect("");
     } else if (Boolean(history.pushState) === false &&
-      window.location.pathname &&
-      window.location.pathname.replace('/', '')) {
+      a.pathname &&
+      a.pathname.replace('/', '')) {
       redirect("#");
     }
   </script>
@@ -64,7 +98,7 @@
         <base href="/angular2-webpack-starter/">
 
 
-<script type="text/javascript" src="/angular2-webpack-starter/polyfills.dll.js" defer></script><script type="text/javascript" src="/angular2-webpack-starter/vendor.dll.js" defer></script><script type="text/javascript" src="/angular2-webpack-starter/polyfills.bundle.js" defer></script><script type="text/javascript" src="/angular2-webpack-starter/vendor.bundle.js" defer></script><script type="text/javascript" src="/angular2-webpack-starter/main.bundle.js" defer></script></head>
+<link href="/angular2-webpack-starter/main.d799841e5ce53c2fb9389a7567f94401.css" rel="stylesheet"><script type="text/javascript" src="/angular2-webpack-starter/polyfills.15ee650c8cab63696c79.bundle.js" defer></script><script type="text/javascript" src="/angular2-webpack-starter/vendor.eb8b09df119da2109dd7.bundle.js" defer></script><script type="text/javascript" src="/angular2-webpack-starter/main.590bd3dd2460d0663ecd.bundle.js" defer></script></head>
 
 <body>
 
