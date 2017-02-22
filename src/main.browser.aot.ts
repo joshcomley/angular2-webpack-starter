@@ -9,6 +9,9 @@ import { decorateModuleRef } from './app/environment';
  */
 import { AppModuleNgFactory } from '../compiled/src/app/app.module.ngfactory';
 
+import 'jquery';
+import 'bootstrap-sass'; // used to import bootstrap as scss
+
 /*
  * Bootstrap our Angular app with a top level NgModule
  */

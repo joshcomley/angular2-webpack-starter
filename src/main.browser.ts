@@ -10,6 +10,9 @@ import { bootloader } from '@angularclass/hmr';
  */
 import { AppModule } from './app';
 
+import 'jquery';
+import 'bootstrap-sass'; // used to import bootstrap as scss
+
 /*
  * Bootstrap our Angular app with a top level NgModule
  */
